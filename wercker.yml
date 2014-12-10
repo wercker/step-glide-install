@@ -19,13 +19,13 @@ build:
         name: simple test glide
         code: |-
           ./glide --version
-deploy:
-  steps:
     - script:
         name: update version
         code: |-
           export VERSION=$(date +%Y.%j.%k%M)
     - bash-template
+deploy:
+  steps:
     - script:
         name: debug
         code: |-
