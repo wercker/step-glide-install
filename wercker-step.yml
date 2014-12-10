@@ -1,0 +1,10 @@
+name: glide-install
+version: 0.1.0
+description: uses glide to install packages then runs go build
+keywords:
+  - glide
+properties:
+  build:
+    type: string
+    required: false
+    default: "true"

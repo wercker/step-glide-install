@@ -1,0 +1,16 @@
+build:
+  steps:
+    - script:
+        name: fetch glide
+        code: |-
+          apt-get update
+          apt-get install unzip
+          curl -L -o glide_linux_amd64.zip https://github.com/Masterminds/glide/releases/download/0.2.0/glide_linux_amd64.zip
+          unzip glide_linux_amd64.zip
+
+deploy:
+  steps:
+    - script:
+        name: debug
+        code: |-
+          ls -la
