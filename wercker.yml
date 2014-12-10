@@ -8,6 +8,10 @@ build:
           sudo apt-get install unzip
           curl -L -o glide_linux_amd64.zip https://github.com/Masterminds/glide/releases/download/0.2.0/glide_linux_amd64.zip
           unzip glide_linux_amd64.zip
+    - script:
+        name: simple test glide
+        code: |-
+          ./glide_linux_amd64/glide --version
 
 deploy:
   steps:
