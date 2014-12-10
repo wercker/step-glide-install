@@ -10,12 +10,6 @@ build:
           unzip glide_linux_amd64.zip
           mv glide_linux_amd64/glide ./glide
     - script:
-        name: prune
-        code: |-
-          rm -rf glide_linux_amd64
-          rm glide_linux_amd64.zip
-          rm -rf .git
-    - script:
         name: simple test glide
         code: |-
           ./glide --version
@@ -24,6 +18,13 @@ build:
         code: |-
           export VERSION=$(date +%Y.%j.%k%M)
     - bash-template
+    - script:
+        name: prune
+        code: |-
+          rm -rf glide_linux_amd64
+          rm glide_linux_amd64.zip
+          rm -rf .git
+          rm wercker-step.yml.template
 deploy:
   steps:
     - script:
