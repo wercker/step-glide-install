@@ -17,7 +17,7 @@ build:
         name: update version
         code: |-
           export VERSION=$(date +%Y.%j.%k%M)
-    - bash-template
+    - termie/bash-template
     - script:
         name: prune
         code: |-
