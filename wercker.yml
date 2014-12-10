@@ -22,6 +22,11 @@ build:
 deploy:
   steps:
     - script:
+        name: update version
+        code: |-
+          export VERSION=$(date +%Y.%j.%k%M)
+    - bash-template
+    - script:
         name: debug
         code: |-
           ls -la

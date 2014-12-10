@@ -1,5 +1,5 @@
 name: glide-install
-version: 0.1.0
+version: ${VERSION}
 description: uses glide to install packages then runs go build
 keywords:
   - glide
