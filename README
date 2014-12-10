@@ -8,3 +8,5 @@ You can disable the build behavior by adding build: false
 
   - termie/glide-build
       build: false
+
+glide install obvs requires a glide.yaml
