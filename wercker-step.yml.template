@@ -1,4 +1,4 @@
-name: glide-install
+name: glide-build
 version: ${VERSION}
 description: uses glide to install packages then runs go build
 keywords:
