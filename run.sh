@@ -4,7 +4,7 @@ set -e
 # First make sure glide is installed
 if ! type glide &> /dev/null ; then
   info "glide is not installed, copying binary"
-  cp $WERCKER_STEP_ROOT/glide /usr/bin/glide
+  sudo cp $WERCKER_STEP_ROOT/glide /usr/bin/glide
 else
   info "glide is available"
   debug "glide version: $(glide --version)"
