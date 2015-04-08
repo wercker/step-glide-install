@@ -15,7 +15,7 @@ build:
           ./glide --version
     - script:
         name: update version
-        code: export VERSION=$(date +%Y.%j.%H%M)
+        code: export VERSION=$(date +%Y.%-j.%-H%M)
     - termie/bash-template
     - script:
         name: prune
