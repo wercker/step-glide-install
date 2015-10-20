@@ -2,28 +2,26 @@ box: wercker/default
 build:
   steps:
     - script:
+        name: set version
+        code: export GLIDE_VERSION="0.4.1"
+
+    - install-packages:
+        packages: unzip
+
+    - script:
         name: fetch glide
         code: |-
-          sudo apt-get update
-          sudo apt-get install unzip
-          curl -L -o glide_linux_amd64.zip https://github.com/Masterminds/glide/releases/download/0.2.0/glide_linux_amd64.zip
+          curl -L -o glide_linux_amd64.zip https://github.com/Masterminds/glide/releases/download/${GLIDE_VERSION}/glide_linux_amd64.zip
           unzip glide_linux_amd64.zip
-          mv glide_linux_amd64/glide ./glide
+          mv glide_dist/glide ./glide
+
     - script:
         name: simple test glide
-        code: |-
-          ./glide --version
-    - script:
-        name: update version
-        code: export VERSION=$(date +%Y.%-j.%-H%M)
-    - termie/bash-template
+        code: ./glide --version
+
     - script:
         name: prune
-        code: |-
-          rm -rf glide_linux_amd64
-          rm glide_linux_amd64.zip
-          rm -rf .git
-          rm wercker-step.yml.template
+        code: rm -rf __MACOSX glide_dist .git glide_linux_amd64.zip
 deploy:
   steps:
     - script:
