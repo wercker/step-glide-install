@@ -1,8 +1,7 @@
 #!/bin/sh
-set -e
+set -eo pipefail
 
-debug "$("$WERCKER_STEP_ROOT/glide" --version)"
-info "using GOPATH=$("$WERCKER_STEP_ROOT/glide" gopath)"
+debug "$(./glide --version)"
 
-export GOPATH=$("$WERCKER_STEP_ROOT/glide" gopath)
-"$WERCKER_STEP_ROOT/glide" install
+export GOVENDOREXPERIMENT=1
+./glide install --cache
