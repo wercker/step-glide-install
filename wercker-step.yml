@@ -1,6 +1,6 @@
 name: glide-install
-version: 1.0.0
-description: uses glide to setup $GOPATH and install dependencies
+version: 2.0.0
+description: uses glide to install dependencies via GOVENDOREXPERIMENT=1
 keywords:
   - glide
   - $GOPATH
