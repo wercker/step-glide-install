@@ -3,7 +3,7 @@ build:
   steps:
     - script:
         name: set version
-        code: export GLIDE_VERSION="0.10.1"
+        code: export GLIDE_VERSION="0.10.2"
 
     - script:
         name: fetch glide
