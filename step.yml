@@ -1,0 +1,5 @@
+name: glide-install
+version: 3.0.0
+summary: using glide to install dependencies
+tags:
+  - glide
